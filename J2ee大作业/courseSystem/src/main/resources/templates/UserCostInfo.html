@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>用户消费信息</title>
+</head>
+<body>
+<nav>
+    <ul>
+    <li class="sub-menu-parent active" tab-index="0">
+        <a href="./MainPage">课程信息</a>
+    </li>
+    <li class="sub-menu-parent" tab-index="0">
+        <a id="userInfo" href="#">个人中心</a>
+        <ul class="sub-menu">
+            <li><a id="myCourse" href="#">我的课程</a></li>
+            <li><a id="myGrade" href="#">我的成绩</a></li>
+            <li><a id="myCost" href="#">我的消费</a></li>
+        </ul>
+    </li>
+    <li class="sub-menu-parent" tab-index="0">
+        <a id="orderManager">订单管理</a>
+    </li>
+    <li class="sub-menu-parent" tab-index="0">
+        <a id="search" href="#">搜索课程</a>
+    </li>
+    </ul>
+</nav>
+<table>
+    <thead>
+    <tr id="tr">
+        <th>编号</th>
+        <th>类型</th>
+        <th>订单号</th>
+        <th>课程名</th>
+        <th>金额</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+
+    <tr th:each="cost : ${costs.costs}">
+        <td th:text="${cost.logId}"></td>
+        <td th:text="${cost.logClass}"></td>
+        <td th:text="${cost.orderId}"></td>
+        <td th:text="${cost.courseName}"></td>
+        <td th:text="${cost.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/usercostInfo.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

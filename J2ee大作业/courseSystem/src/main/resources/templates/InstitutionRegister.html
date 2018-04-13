@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>机构注册</title>
+</head>
+<body>
+
+    <div class="step-bar">
+        <ul>
+            <li>
+                <div class="number active">1</div>
+                <div class="text">机构名称及地址</div>
+            </li>
+            <li>
+                <div class="number">2</div>
+                <div class="text">机构师资力量</div>
+                <div class="line"></div>
+            </li>
+            <li>
+                <div class="number">3</div>
+                <div class="text">机构描述</div>
+                <div class="line"></div>
+            </li>
+        </ul>
+    </div>
+    <h1>机构注册（所有项都为必填项）</h1>
+    <form>
+        <div class="account-setup register-form">
+            <h2>第一步</h2>
+            <input id="institutionname" type="text" placeholder="机构名称" required="required"/>
+            <input id="institutionaddress" type="text" placeholder="机构地址" required="required"/>
+            <input id="mail" type="email" placeholder="邮箱地址" required="required"/>
+            <div class="button firstNext">下一步</div>
+        </div>
+        <div class="user-details register-form">
+            <h2>第二步</h2>
+            <textarea id="teachpower" rows="12" cols="30" placeholder="输入师资情况"></textarea>
+            <div class="button firstPrev">上一步</div>
+            <div class="button secondNext">下一步</div>
+        </div>
+        <div class="finish-step register-form">
+            <h2>第三步</h2>
+            <textarea id="description" rows="12" cols="30" placeholder="机构描述"></textarea>
+            <div class="button secondPrev">返回</div>
+            <div class="button" id="finish">完成注册</div>
+            <div class="button" id="login">立即登录</div>
+        </div>
+        </form>
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/institutionregister.js}"></script>
+</html>

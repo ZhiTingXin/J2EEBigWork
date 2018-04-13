@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <title>我的课程</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a href="./MainPage">课程信息</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="userInfo" href="#">个人中心</a>
+            <ul class="sub-menu">
+                <li><a id="myCourse" href="#">我的课程</a></li>
+                <li><a id="myGrade" href="#">我的成绩</a></li>
+                <li><a id="myCost" href="#">我的消费</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="orderManager">订单管理</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="search" href="#">搜索课程</a>
+        </li>
+    </ul>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>课程名称</th>
+        <th>发布机构</th>
+        <th>招生人数</th>
+        <th>剩余名额</th>
+        <th>课程开始时间</th>
+        <th>课程结束时间</th>
+        <th>课程状态</th>
+        <th>学习时间</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="course : ${courseList.courses}">
+        <td th:text="${course.courseName}"></td>
+        <td th:text="${course.institute}"></td>
+        <td th:text="${course.needNum}"></td>
+        <td th:text="${course.lastNum}"></td>
+        <td th:text="${course.beginDate}"></td>
+        <td th:text="${course.endDate}"></td>
+        <td th:text="${course.courseState}"></td>
+        <td th:text="${course.learntime}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/usercourseinfo.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

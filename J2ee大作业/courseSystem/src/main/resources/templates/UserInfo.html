@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>个人中心</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a href="./MainPage">课程信息</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="userInfo" href="#">个人中心</a>
+            <ul class="sub-menu">
+                <li><a id="myCourse" href="#">我的课程</a></li>
+                <li><a id="myGrade" href="#">我的成绩</a></li>
+                <li><a id="myCost" href="#">我的消费</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="orderManager">订单管理</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="search" href="#">搜索课程</a>
+        </li>
+    </ul>
+</nav>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>联系方式</th>
+            <th>会员状态</th>
+            <th>会员等级</th>
+            <th>积分</th>
+            <th>累计消费</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <tr>
+            <td>
+                <input th:value="${student.userName}" id="name" type="text" required="required" readonly="readonly"/>
+            </td>
+            <td>
+                <input th:value="${student.phone}" id="phone" type="text" required="required" readonly="readonly"/>
+            </td>
+            <td>
+               <button id="vipState"></button>
+            </td>
+            <td>
+                <input th:value="${student.userLevel}" id="vipLevel" type="text" required="required" disabled="disabled"/>
+            </td>
+            <td>
+                <input th:value="${student.ingration}" id="integration" type="text" required="required" disabled="disabled"/>
+            </td>
+            <td>
+                <input  th:value="${student.cost}" id="cost" type="text" required="required" disabled="disabled"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <div id="edit" class="button">编辑</div>
+    <div id="save" class="button">保存</div>
+</div>
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/userInfo.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

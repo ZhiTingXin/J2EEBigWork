@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <meta charset="UTF-8"/>
+    <title>机构登录</title>
+</head>
+<body class="align">
+<div class="grid">
+
+    <form action="" class="form login">
+
+        <div class="form__field">
+            <input id="password" type="password" name="Password" class="form__input" placeholder="七位机构验证码" required="required"/>
+        </div>
+
+        <div class="form__field">
+            <button id="login" type="button">登录</button>
+        </div>
+
+    </form>
+
+    <p class="text--center">想成为本站点的机构？<a href="./InstitutionRegister">点击申请</a></p>
+
+</div>
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+<script th:src="@{/js/institutionlogin.js}"></script>
+</html>

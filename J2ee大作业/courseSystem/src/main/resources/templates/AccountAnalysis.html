@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>管理员首页</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a href="./ManagerMainPage">机构信息</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a href="./PayInstitution">设置支付结算</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a href="./DataAnalysis">数据统计</a>
+            <ul class="sub-menu">
+                <li><a id="userData" href="#">用户统计</a></li>
+                <li><a id="institution" href="#">机构统计</a></li>
+                <li><a id="account" href="#">财务统计</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="search" href="#">搜索机构</a>
+        </li>
+    </ul>
+</nav>
+<table>
+    <thead>
+    <tr>
+        <th>月份</th>
+        <th>盈利额</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+        <tr>
+            <td>2017年4月</td>
+            <td>200</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/accountanalysis.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link th:href="@{/css/login.css}" rel="stylesheet"/>
+    <link th:href="@{/css/google.css}" rel="stylesheet"/>
+    <title>用户登录</title>
+</head>
+<body class="align">
+<div class="grid">
+
+    <form action="" class="form login">
+
+        <div class="form__field">
+            <input id="mail" type="email" name="Mail" class="form__input" placeholder="邮箱" required="required"/>
+        </div>
+
+        <div class="form__field">
+            <input id="password" type="password" name="Password" class="form__input" placeholder="密码" required="required"/>
+        </div>
+
+        <div class="form__field">
+            <button id="login" type="button">登录</button>
+        </div>
+
+    </form>
+
+    <p class="text--center">还没有账户？<a href="./Register">点击注册</a></p>
+
+</div>
+
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/login.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

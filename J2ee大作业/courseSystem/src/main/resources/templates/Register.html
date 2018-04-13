@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/register.css}"/>
+    <title>用户免费注册</title>
+</head>
+<body class="align">
+<div class="grid">
+
+    <form action="" class="form register">
+
+        <div class="form__field">
+            <input id="mail" type="email" name="Mail" class="form__input" placeholder="邮箱" required="required"/>
+        </div>
+
+        <div class="form__field">
+            <input id="password1" type="password" name="Password" class="form__input" placeholder="输入密码" required="required"/>
+        </div>
+
+        <div class="form__field">
+            <input id="password2" type="password" name="Password" class="form__input" placeholder="再次输入密码" required="required"/>
+        </div>
+
+        <div class="form__field">
+            <button id="register" type="button">注册</button>
+        </div>
+
+    </form>
+
+    <p class="text--center">已有账户？<a href="./Login">点击登录</a></p>
+
+</div>
+</body>
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <script th:src="@{/js/register.js}"></script>
+</html>

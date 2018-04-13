@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>机构信息统计</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a href="./ManagerMainPage">机构信息</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a href="./PayInstitution">设置支付结算</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a href="./DataAnalysis">数据统计</a>
+            <ul class="sub-menu">
+                <li><a id="userData" href="#">用户统计</a></li>
+                <li><a id="institution" href="#">机构统计</a></li>
+                <li><a id="account" href="#">财务统计</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="search" href="#">搜索机构</a>
+        </li>
+    </ul>
+</nav>
+<div>
+    <label style="color:#ffffff">机构总数:   <label id="insNum" style="color:#ffffff"></label></label>
+    <label style="color:#ffffff">课程总数：  <label id="courseNum" style="color:#ffffff"></label></label>
+</div>
+<div id="container" style="margin-left: 20%; height: 100% ;width: 60%"></div>
+
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/institutiondata.js}"></script>
+<script th:src="@{/js/echarts.min.js}"></script>
+</html>

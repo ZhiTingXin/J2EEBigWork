@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <title>管理员首页</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a href="./ManagerMainPage">机构信息</a>
+            <ul class="sub-menu">
+                <li><a id="passed" href="#">已审核机构</a></li>
+                <li><a id="notPassed" href="#">尚未审核机构</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a href="./PayInstitution">设置支付结算</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a href="./DataAnalysis">数据统计</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="search" href="#">搜索机构</a>
+        </li>
+    </ul>
+</nav>
+<div class="wrap">
+    <div class="search">
+        <input id="inputInstitution" type="text" class="searchTerm" placeholder="查找机构"/>
+        <button id="searchInstitution" type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>机构名称</th>
+        <th>机构地址</th>
+        <th>机构描述</th>
+        <th>师资力量</th>
+        <th>审核状态</th>
+        <th>审核</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+
+    <tr th:each="institution : ${institutionList.institutions}">
+        <td th:text="${institution.institutionName}"></td>
+        <td th:text="${institution.address}"></td>
+        <td th:text="${institution.description}"></td>
+        <td th:text="${institution.teachpower}"></td>
+        <td th:text="${institution.state}"></td>
+        <td class="check"><button class="pass">通过</button></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/managermainpage.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

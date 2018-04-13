@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>机构退订信息</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a id="courses">机构课程</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="planRelease">发布课程计划</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="logManager">听课登记</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="institutionInfo" href="#">机构信息</a>
+            <ul class="sub-menu">
+                <li><a id="booked" href="#">预订信息</a></li>
+                <li><a id="canceled" href="#">退订信息</a></li>
+                <li><a id="account" href="#">财务信息</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>课程名称</th>
+            <th>用户名称</th>
+            <th>预订时间</th>
+            <th>班级名称</th>
+            <th>预订数量</th>
+            <th>总价格</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <tr th:each="order : ${orderList.orders}">
+            <td th:text="${order.courseName}"></td>
+            <td th:text="${order.userName}"></td>
+            <td th:text="${order.orderDate}"></td>
+            <td th:text="${order.className}"></td>
+            <td th:text="${order.num}"></td>
+            <td th:text="${order.total}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/institutioninfo.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>

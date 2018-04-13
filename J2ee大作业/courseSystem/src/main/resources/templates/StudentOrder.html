@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/mainpage.css}"/>
+    <link rel="stylesheet" th:href="@{/css/google.css}"/>
+    <link rel="stylesheet" th:href="@{/css/institutionregister.css}"/>
+    <title>用户首页</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="myCourse">课程信息</a>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="myInfo">个人中心</a>
+        </li>
+        <li class="sub-menu-parent active" tab-index="0">
+            <a id="orderInfo">订单管理</a>
+            <ul class="sub-menu">
+                <li><a id="bookedOrder" href="#">预订订单</a></li>
+                <li><a id="canceledOrder" href="#">退订订单</a></li>
+                <li><a id="needPayOrder" href="#">未支付订单</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu-parent" tab-index="0">
+            <a id="search" href="#">搜索课程</a>
+        </li>
+    </ul>
+</nav>
+<div class="wrap">
+    <div class="search">
+        <input id="inputCourse" type="text" class="searchTerm" placeholder="查找课程"/>
+        <button id="searchCourse" type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+<div class="user-details register-form">
+    <h2>支付详情</h2>
+    <div>
+        <input id="username" type="text" placeholder="账户名" required="required"/>
+    </div>
+    <div>
+        <input id="password" type="password" placeholder="密码" required="required"/>
+    </div>
+    <div>
+        <input id="payWord" type="password" placeholder="支付密码" required="required"/>
+    </div>
+    <div>
+        <label>订单总价：  <label id="total"></label></label>
+    </div>
+    <div>
+        <label>会员优惠后： <label id="afterDis"></label></label>
+    </div>
+    <div>
+        <span><input id="discount"  type="checkbox"/>使用积分进行抵扣</span>
+    </div>
+    <div>
+        <label id="discountInfo"></label>
+    </div>
+    <div id="afterDiscount">
+
+    </div>
+
+    <div id="commit" class="button">确认支付</div>
+    <div id="back" class="button">返回</div>
+</div>
+<table>
+    <thead>
+    <tr id="tr">
+        <th>订单编号</th>
+        <th>课程名称</th>
+        <th>订单状态</th>
+        <th>订单时间</th>
+        <th>人数</th>
+        <th>订单类型</th>
+        <th>总价格</th>
+    </tr>
+    </thead>
+    <tbody id="table">
+
+    <tr th:each="order : ${orderList.orders}">
+        <td th:text="${order.orderid}"></td>
+        <td th:text="${order.courseName}"></td>
+        <td th:text="${order.orderState}"></td>
+        <td th:text="${order.orderDate}"></td>
+        <td th:text="${order.classNum}"></td>
+        <td th:text="${order.orderClass}"></td>
+        <td th:text="${order.total}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+<script th:src="@{/js/studentorder.js}"></script>
+<script th:src="@{/js/cookie.js}"></script>
+</html>
